@@ -17,11 +17,11 @@ public class Email {
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		System.out.println("EMAIL CREATED: " + this.firstName + " " + this.lastName);
 	
+		
 		//Call a method asking for the department - return the department
 		this.department = setDepartment();
-		System.out.println("Department: " + this.department);
+
 	
 		//Call a method that returns a random password
 		this.password = randomPassword(defaultPasswordLength);
@@ -29,20 +29,24 @@ public class Email {
 	
 		//Combine elements to generate an email
 		email =firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department +"." + companySuffix;
-		System.out.println("Your email is: " + email);
 	
+		
 		
 	}
 	
 	//Ask for the department
 	private String setDepartment() {
-		System.out.println("\nDEPARTMENT CODES: \n[1] for Sales \n[2] for Development \n[3] for Accounting \n[0] for none\n\nEnter department code:" );
+		System.out.println("new worker: " + firstName + "\n\nDEPARTMENT CODES: \n[1] for Sales \n[2] for Development \n[3] for Accounting \n[0] for none\n\nEnter department code:" );
 		Scanner in = new Scanner(System.in);
 		int depChoice = in.nextInt();
+		//Close the scanner after getting user input
+		in.close();		
+		
 		if (depChoice == 1) {return "sales";}
 		else if (depChoice == 2) {return "dev";}
 		else if (depChoice == 3) {return "acct";}
 		else {return "";}
+		
 	}
 	
 	//generate a random password
@@ -80,4 +84,9 @@ public class Email {
 	public int getMailboxCapacity(){return mailboxCapacity;}
 	public String getAlternateEmail() {return alternateEmail;}
 	public String getPassword() {return password;}
+	
+	public String showInfo() {
+		return "\nDISPLAY NAME: " + firstName + " " + lastName + "\nCOMPANY EMAIL: " + email + "\nMAILBOX CAPACITY: " + mailboxCapacity + "mb";
+				
+	}
 }

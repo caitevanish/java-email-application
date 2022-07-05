@@ -8,7 +8,7 @@ public class Email {
 	private String password;
 	private String department;
 	private String email;
-	private int mailboxCapacity;
+	private int mailboxCapacity = 500;	//setting default mail capacity to 500
 	private int defaultPasswordLength =10;
 	private String alternateEmail;
 	private String companySuffix = "anycompany.com";
@@ -31,6 +31,7 @@ public class Email {
 		email =firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department +"." + companySuffix;
 		System.out.println("Your email is: " + email);
 	
+		
 	}
 	
 	//Ask for the department
@@ -59,9 +60,18 @@ public class Email {
 		return new String(password);
 	}
 	
-	//set the mailbox capacity
+	//set the mailbox capacity;	this is encapsulation!
+	public void setMailboxCapacity (int capacity) {
+		this.mailboxCapacity = capacity; 
+	}
 	
 	//set the alternate email
+	public void setAlternateEmail(String altEmail) {
+		this.alternateEmail = altEmail;
+	}
 	
 	//change the password
+	public void changePassword(String password) {
+		this.password = password;
+	}
 }

@@ -15,8 +15,8 @@ public class EmailApp {
 		em1.changePassword("howboutdat");
 		em1.setAlternateEmail("johnsmith@yahoo.com");
 		
-//		System.out.println("Your new password: " + em1.password);
-//		System.out.println("Your alternate email: " + em1.alternateEmail);
+		System.out.println("Your new password: " + em1.getPassword());
+		System.out.println("Your alternate email: " + em1.getAlternateEmail());
 //		
 	}
 }

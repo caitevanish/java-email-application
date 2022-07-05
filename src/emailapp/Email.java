@@ -74,4 +74,10 @@ public class Email {
 	public void changePassword(String password) {
 		this.password = password;
 	}
+	
+	//getters
+		//public methods that are going to access the properties by the get methods - also encapsulation
+	public int getMailboxCapacity(){return mailboxCapacity;}
+	public String getAlternateEmail() {return alternateEmail;}
+	public String getPassword() {return password;}
 }
